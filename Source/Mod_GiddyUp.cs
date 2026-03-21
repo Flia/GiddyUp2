@@ -148,9 +148,9 @@ public class Mod_GiddyUp : Mod
         mountableFilterRect.y += 30f;
         Rect mountableFilterInnerRect = mountableFilterRect with {
             width = mountableFilterRect.width - 30f,
-            height = (coreLineNumber + 2) * 22f
+            height = coreLineNumber * 22f
         };
-        Widgets.BeginScrollView(mountableFilterRect.ContractedBy(5f, 0), ref coreScrollPos, mountableFilterInnerRect);
+        Widgets.BeginScrollView(mountableFilterRect.ContractedBy(5f), ref coreScrollPos, mountableFilterInnerRect);
         options.Begin(mountableFilterInnerRect);
         options.DrawList(animalsForViewing, selectedTab == SelectedTab.BodySize ? MountableCache : DrawRulesCache, out coreLineNumber);
         options.End();
